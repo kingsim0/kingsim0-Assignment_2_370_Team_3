@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>8</zoom_level>
+  <element>
+    <type>com.baselet.element.old.allinone.ActivityDiagramText</type>
+    <coordinates>
+      <x>64</x>
+      <y>0</y>
+      <w>293</w>
+      <h>1304</h>
+    </coordinates>
+    <panel_attributes>title:Ventilation Cycle Flow
+Start
+Introduce Fresh Gas
+Blend with Patient’s Exhaled Gas
+Trigger Inhalation?~idl
+If
+	[no]
+	-&gt;idl
+	
+	[yes]
+	Compress Ventilator Bellows
+Drive Gas Enters System
+Open Inhalation Valve
+Close Exhalation Valve
+	Deliver Air to Patient~idl1
+EndIf
+
+Inspiration Complete?
+If
+	[no]
+	-&gt;idl1
+		
+	[yes]
+	Relax Ventilator Bellows
+	Close Inspiratory Valve
+	Open Expiratory Valve
+	Allow Passive Expiration~idl2
+	CO₂ Absorption
+EndIf
+Expiration Complete?
+If
+	[no]
+	-&gt;idl2
+		
+	[yes]
+EndIf
+Continue Breathing Cycle?
+If
+	[yes]
+	-&gt;idl
+				
+	[no]
+End
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
